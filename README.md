@@ -13,41 +13,35 @@ These _"extensions"_ and the _users_ endpoints are there just to help you, if yo
 
 Don't forget to remove the dependencies from [requirements.txt](requirements.txt) too.
 
-# Getting Started
+# Local Host
 
 ## Installing
 
-To install the Flask Base you will need to:
-
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
 
 ## Usage
 
-### Development
-
 ```
-# if you are not using mongo and jwt, forget these exports
 export MONGO_URI="mongodb://<your_mongo_host>:27017/<your_database>"
 export JWT_SECRET_KEY="<randomic_key>"
 python3 entrypoint.py
 ```
 
-## Docker
+# Docker Host
 
 
-### Build
+### Installing
 
 ```
-docker build -t flask-app .
+docker run -p 5000:5000 -it flask-app   
 ```
 
 ### Start a New Container
 
 ```
 docker run -d \
---name flask-app \
 -p 5000:5000 \
 -e MONGO_URI="mongodb://<your_mongo_host>:27017/<your_database>" \
 -e JWT_SECRET_KEY="<randomic_key>" \
