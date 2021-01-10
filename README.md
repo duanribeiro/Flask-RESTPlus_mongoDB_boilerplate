@@ -7,13 +7,13 @@ You can just clone this repo and start to create/customize your own RESTful API 
 
 # Localhost
 
-## Installing
+### Installing
 
 ```
 pip3 install -r requirements.txt
 ```
 
-## Usage
+### Usage
 
 ```
 export MONGO_URI="mongodb://<your_mongo_host>:27017/<your_database>"
