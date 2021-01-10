@@ -13,7 +13,7 @@ These _"extensions"_ and the _users_ endpoints are there just to help you, if yo
 
 Don't forget to remove the dependencies from [requirements.txt](requirements.txt) too.
 
-# Local Host
+# Localhost
 
 ## Installing
 
@@ -29,7 +29,7 @@ export JWT_SECRET_KEY="<randomic_key>"
 python3 entrypoint.py
 ```
 
-# Docker Host
+# Docker
 
 
 ### Installing
