@@ -27,7 +27,7 @@ python3 entrypoint.py
 ### Installing
 
 ```
-docker run -p 5000:5000 -it flask-app   
+docker build -t flask-app --target develop .
 ```
 
 ### Usage
