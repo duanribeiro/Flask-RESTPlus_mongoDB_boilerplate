@@ -5,14 +5,6 @@ My template base to build Flask RESTful APIs using [Flask RESTPlus](https://flas
 
 You can just clone this repo and start to create/customize your own RESTful API using this code as your template base :)
 
-## JWT, PyMongo... Do i need all of this ???
-
-__NO !__ You can remove JWT, PyMongo and Bcrypt (used for hashing users password on database), excluding all the references on the [app](app/__init__.py), [config](config.py) and the files that makes use of them.
-
-These _"extensions"_ and the _users_ endpoints are there just to help you, if you need to implement all of the boilerplate required to work with JWT, PyMongo and so on.
-
-Don't forget to remove the dependencies from [requirements.txt](requirements.txt) too.
-
 # Localhost
 
 ## Installing
@@ -38,7 +30,7 @@ python3 entrypoint.py
 docker run -p 5000:5000 -it flask-app   
 ```
 
-### Start a New Container
+### Usage
 
 ```
 docker run -d \
@@ -48,14 +40,14 @@ docker run -d \
 flask-app
 ```
 
-## Swagger
+# Swagger
 
 After the application goes up, open your browser on `localhost:5000/api/v1/docs` to see the self-documented interactive API:
 
 ![](/imgs/swagger.png)
 
 
-## Project Structure
+# Project Structure
 
 The project structure is based on the official [Scaling your project](https://flask-restplus.readthedocs.io/en/stable/scaling.html#multiple-apis-with-reusable-namespaces) doc with some adaptations (e.g `v1` folder to agroup versioned resources).
 
