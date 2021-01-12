@@ -19,8 +19,8 @@ api = Api(v1_blueprint,
           security='Bearer Auth',
           authorizations=authorizations)
 
-from .blueprints.auth.login import api as auth_ns
-from .blueprints.users.user import api as user_ns
+from .blueprints.auth.routes import api as auth_ns
+from .blueprints.users.routes import api as user_ns
 
 api.add_namespace(auth_ns)
 api.add_namespace(user_ns)

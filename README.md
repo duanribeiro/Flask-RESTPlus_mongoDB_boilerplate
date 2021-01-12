@@ -23,7 +23,6 @@ python3 entrypoint.py
 
 # Docker
 
-
 ### Installing
 
 ```
@@ -35,17 +34,14 @@ docker build -t flask-app --target develop .
 ```
 docker run -d \
 -p 5000:5000 \
--e MONGO_URI="mongodb://<your_mongo_host>:27017/<your_database>" \
--e JWT_SECRET_KEY="<randomic_key>" \
+-e MONGO_URI="mongodb://<your_mongo_host>:<your_mongo_port>/<your_mongo_database>" \
+-e JWT_SECRET_KEY="<your_randomic_key>" \
 flask-app
 ```
 
 # Swagger
 
-After the application goes up, open your browser on `localhost:5000/api/v1/docs` to see the self-documented interactive API:
-
-![](/imgs/swagger.png)
-
+After the application goes up, open your browser on `localhost:5000/api/v1/docs` to see the self-documented interactive API.
 
 # Project Structure
 
@@ -62,42 +58,24 @@ The project structure is based on the official [Scaling your project](https://fl
 │   ├── __init__.py
 │   └── v1
 │       ├── __init__.py
-│       └── resources
+│       └── blueprints
 │           ├── auth
 │           │   ├── __init__.py
-│           │   ├── login.py
+│           │   ├── routes.py
 │           │   └── serializers.py
 │           ├── __init__.py
 │           └── users
 │               ├── __init__.py
-│               ├── models.py
+│               ├── services.py
 │               ├── serializers.py
-│               └── user.py
+│               └── routes.py
 ├── config.py
 ├── Dockerfile
 ├── LICENSE
 ├── README.md
 ├── requirements.txt
-├── run.py
-├── tests
-│   ├── conftest.py
-│   ├── fake_data
-│   │   └── users.json
-│   ├── __init__.py
-│   ├── integration
-│   │   ├── __init__.py
-│   │   └── users
-│   │       ├── __init__.py
-│   │       └── test_users_api.py
-│   └── unit
-│       ├── helpers_test
-│       │   ├── __init__.py
-│       │   └── test_password.py
-│       ├── __init__.py
-│       └── users
-│           ├── __init__.py
-│           └── test_users.py
-└── tox.ini
+├── entrypoint.py
+└── entrypoint.sh
 
 ```
 
@@ -119,7 +97,8 @@ The project structure is based on the official [Scaling your project](https://fl
 * `.dockerignore` - Lists files and directories which should be ignored while Docker build process.
 * `.gitignore` - Lists files and directories which should not be added to git repository.
 * `requirements.txt` - All project dependencies.
-* `entrypoint.py` - The Application entrypoint.
+* `entrypoint.py` - The application entrypoint.
+* `entrypoint.sh` - Starting script before application
 
 ## License
 
